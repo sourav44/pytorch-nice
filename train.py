@@ -46,7 +46,7 @@ for i in range(cfg['TRAIN_EPOCHS']):
   mean_likelihood /= num_minibatches
   print('Epoch {} completed. Log Likelihood: {}'.format(i, mean_likelihood))
 
+  epoch = i
   if epoch % 5 == 0:
     save_path = os.path.join(cfg['MODEL_SAVE_PATH'], '{}.pt'.format(epoch))
     torch.save(model.state_dict(), save_path)
-
